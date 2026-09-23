@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Колесо — велопрокат у місті</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="logo">Колесо</div>
+    <a class="cta" href="#calc">Знайти велосипед</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap" style="display:contents;">
+    <div>
+      <h1>Візьміть велосипед тут,<br>лишіть будь-де в місті</h1>
+      <p class="lede">220 станцій по всьому місту. Скануєте QR, їдете, паркуєте на найближчій станції — без прив'язки до однієї точки старту й фінішу.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#calc">Розрахувати поїздку</a>
+        <button class="btn-secondary" type="button" id="howBtn">Як це працює</button>
+      </div>
+    </div>
+    <div class="route-card">
+      <div class="label">Маршрут · Контрактова — Поділ</div>
+      <svg class="route" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 24 150 C 70 150, 60 90, 110 90 S 180 40, 240 30" fill="none" stroke="#1F7A6C" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
+        <circle class="station" tabindex="0" cx="24" cy="150" r="7" fill="#14202B"><title>Старт: вул. Контрактова</title></circle>
+        <circle class="station" tabindex="0" cx="110" cy="90" r="6" fill="#F2B705" stroke="#14202B" stroke-width="1.5"><title>Станція 12: перетин маршруту</title></circle>
+        <circle class="station" tabindex="0" cx="240" cy="30" r="7" fill="#14202B"><title>Фініш: Поділ</title></circle>
+        <text x="34" y="154" font-family="Inter, sans-serif" font-size="10" fill="#14202B">Старт</text>
+        <text x="120" y="94" font-family="Inter, sans-serif" font-size="10" fill="#14202B">Станція 12</text>
+        <text x="200" y="24" font-family="Inter, sans-serif" font-size="10" fill="#14202B">Фініш</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap" style="display:contents;">
+    <div class="stat"><div class="n">220</div><div class="l">станцій у місті</div></div>
+    <div class="stat"><div class="n">4 хв</div><div class="l">середній час до найближчої</div></div>
+    <div class="stat"><div class="n">15 ₴</div><div class="l">за перші 30 хвилин</div></div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <h2>Три кроки до поїздки</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="k">Скануйте</div>
+        <p>QR-код на кермі відкриває замок за секунду — застосунок не потрібен для старту.</p>
+      </div>
+      <div class="step">
+        <div class="k">Їдьте</div>
+        <p>Мапа в застосунку показує вільні станції та смуги для велосипедів по дорозі.</p>
+      </div>
+      <div class="step">
+        <div class="k">Паркуйте</div>
+        <p>Поставте на будь-якій станції — оплата спишеться автоматично за хвилини поїздки.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fleet" id="calc">
+  <div class="wrap">
+    <h2>Оберіть велосипед і порахуйте вартість</h2>
+    <p class="hint">Натисніть на велосипед і посуньте повзунок — вартість оновиться одразу.</p>
+    <div class="fleet-grid">
+      <div class="bikes" role="group" aria-label="Оберіть тип велосипеда">
+        <button class="bike-row selected" type="button" data-price="15" aria-pressed="true">
+          <div><div class="t">Міський</div><div class="d">Три швидкості, кошик спереду</div></div>
+          <div class="p">15 ₴/30 хв</div>
+        </button>
+        <button class="bike-row" type="button" data-price="30" aria-pressed="false">
+          <div><div class="t">Електро</div><div class="d">Допомога педалюванню на підйомах</div></div>
+          <div class="p">30 ₴/30 хв</div>
+        </button>
+        <button class="bike-row" type="button" data-price="25" aria-pressed="false">
+          <div><div class="t">Вантажний</div><div class="d">Подовжена рама, під покупки чи дитяче крісло</div></div>
+          <div class="p">25 ₴/30 хв</div>
+        </button>
+      </div>
+      <div class="calc">
+        <div class="label">Тривалість поїздки</div>
+        <div class="mins" id="minsLabel">30 хв</div>
+        <input type="range" id="minsRange" min="10" max="180" step="5" value="30" aria-label="Тривалість поїздки у хвилинах">
+        <div class="result">
+          <span class="l">Орієнтовна вартість</span>
+          <span class="v" id="priceLabel">15 ₴</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2>Найближча станція — за кілька хвилин ходьби</h2>
+    <a class="btn-primary" href="#calc">Знайти станцію поруч</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
+    <span>Колесо © 2026</span>
+    <span>Київ, Україна</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('howBtn').addEventListener('click', function () {
+    document.getElementById('how').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
