@@ -2,6 +2,10 @@
 
 Статична лендинг-сторінка сервісу міського велопрокату: калькулятор вартості поїздки, інтерактивна мапа маршруту, hover/focus-ефекти на всіх кнопках.
 
+## Демо
+
+🔗 [https://andriy-stetsula.github.io/koleso-landing/](https://andriy-stetsula.github.io/koleso-landing/)
+
 ## Структура проєкту
 
 ```
